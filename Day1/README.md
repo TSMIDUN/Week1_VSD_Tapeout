@@ -126,16 +126,16 @@ Here is the three-step process to run your simulation from the command line.
 Shell
 
 # Step 1: Compile the Verilog files.
-# This command takes your design and testbench and creates a simulation executable named 'a.out'.
+ This command takes your design and testbench and creates a simulation executable named 'a.out'.
 iverilog good_mux.v tb_good_mux.v
 
 # Step 2: Run the simulation executable.
-# This runs the test and generates the waveform data file ('tb_good_mux.vcd').
+This runs the test and generates the waveform data file ('tb_good_mux.vcd').
 ./a.out
 
 # Step 3: View the waveform results.
-# This opens the GTKWave tool and displays the signal activity over time,
-# allowing you to visually verify your circuit's behavior.
+This opens the GTKWave tool and displays the signal activity over time,
+allowing you to visually verify your circuit's behavior.
 gtkwave tb_good_mux.vcd
 
 
