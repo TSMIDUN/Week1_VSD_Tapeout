@@ -71,11 +71,12 @@ module good_mux (
       y <= i0;
   end
 
-endmodule
+endmodule```
+
 🧪 The Testbench File: tb_good_mux.v
 This file is our test environment. It's not part of the final hardware; its only job is to apply inputs and check if the circuit works correctly during simulation.
 
-Verilog
+```Verilog
 
 // Set the time units for simulation (1ns precision).
 `timescale 1ns/1ps
@@ -115,7 +116,7 @@ module tb_good_mux;
   always #10 i0 = ~i0;   // Flip 'i0' every 10ns.
   always #55 i1 = ~i1;   // Flip 'i1' every 55ns.
 
-endmodule
+endmodule```
 ▶️ Running the Simulation
 Here is the three-step process to run your simulation from the command line.
 
