@@ -3,9 +3,13 @@ A software tool for testing a digital circuit's functionality by applying inputs
 
 # Design:
 The actual Verilog code that describes the hardware logic. It is the blueprint of the circuit.
+<img width="522" height="259" alt="image" src="https://github.com/user-attachments/assets/4ec7a178-60ca-42e9-befe-94a5a01b43ea" />
+
 
 # Testbench:
 A non-synthesizable Verilog file used only for simulation. It applies inputs (stimulus) to the design and checks for correct outputs.
+<img width="729" height="222" alt="image" src="https://github.com/user-attachments/assets/037ae1b5-3bdf-426b-921a-d9555564eb09" />
+
 
 # iverilog & GTKWave Flow:
 A process to check a design. First, compile the design and testbench with iverilog to create an executable. Second, run the executable to generate a .vcd waveform file. Finally, use GTKWave to view the waveforms and visually debug the design's behavior.
