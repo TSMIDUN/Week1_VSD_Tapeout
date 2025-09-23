@@ -21,7 +21,7 @@ A process to check a design.
 - First, compile the design and testbench with iverilog to create an executable. 
 - Second, run the executable to generate a .vcd waveform file.
 - Finally, use GTKWave to view the waveforms and visually debug the design's behavior.
-- <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b5889e9-4bea-4931-878d-0892a12f4655" />
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b5889e9-4bea-4931-878d-0892a12f4655" />
 
 
 ## Synthesizer
@@ -146,6 +146,39 @@ endmodule
 <img width="706" height="651" alt="image" src="https://github.com/user-attachments/assets/e98e545d-a7ec-4043-8564-91f91493b077" />
 
 # 6-Video
+## Yosus Setup 
+<img width="1349" height="751" alt="image" src="https://github.com/user-attachments/assets/6256fc11-5890-4967-a23f-2fa0884bd2a6" />
+## Synthesis Verify 
+- **Synthesizer**: A tool that converts **RTL design** into a **netlist** (collection of gates + interconnections).  
+- In this course, we use **Yosys** as the synthesizer.  
+
+<img width="1377" height="767" alt="image" src="https://github.com/user-attachments/assets/5faede16-d7b5-464f-8773-4b3404b1a49b" />
+<img width="1161" height="124" alt="image" src="https://github.com/user-attachments/assets/b01acc77-a721-43ca-a18f-13032a76e0cc" />
+
+# 7-Video
+
+<img width="675" height="709" alt="image" src="https://github.com/user-attachments/assets/162951e9-7fff-41ee-ac6b-456092f93850" />
+## .LIB File 
+- A **.lib** (or **Liberty**) file is a text-based format that serves as a **datasheet for standard logic gates**, containing information about their area, timing, and power, which a synthesizer uses to build a circuit.
+
+
+# 8-Video 
+## Slow cells 
+- Slower Speed: A slow cell takes a longer time for a signal to pass through it.
+- Lower Power & Area: Because they have slower switching speeds, they typically consume less power and have a smaller physical size on the chip.
+<img width="1033" height="769" alt="image" src="https://github.com/user-attachments/assets/437ab06d-d5f3-44cd-bdf6-5994de0f5ae5" />
+
+# 9-Video 
+## Yosys Control Flow
+### 1.Open Yosys 
+<img width="801" height="538" alt="image" src="https://github.com/user-attachments/assets/cb35eb34-97a3-42d2-ba04-58eaa7e78aad" />
+### 2.Reading Library
+- This part took my time long enoughf i cant find my location because of duplicate folders then used help of ai to get my path
+- First opend the lib file where is sky.lib file is there
+- Then used pwd to get path and then got the out
+  <img width="955" height="645" alt="image" src="https://github.com/user-attachments/assets/25187f7c-2c11-45fd-8592-011e780350ba" />
+  
+
 
 
 
