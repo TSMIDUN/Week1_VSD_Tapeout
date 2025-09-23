@@ -1,28 +1,122 @@
-# Simulator:
-A software tool for testing a digital circuit's functionality by applying inputs and observing outputs. It lets us verify a design before building it.
+# 2-Video
+## Simulator:
+- A software tool for testing a digital circuit's functionality by applying inputs and observing outputs.
++ It lets us verify a design before building it.
 
-# Design:
-The actual Verilog code that describes the hardware logic. It is the blueprint of the circuit.
+
+## Design:
+- The actual Verilog code that describes the hardware logic. 
+- It is the blueprint of the circuit.
 <img width="522" height="259" alt="image" src="https://github.com/user-attachments/assets/4ec7a178-60ca-42e9-befe-94a5a01b43ea" />
 
 
-# Testbench:
-A non-synthesizable Verilog file used only for simulation. It applies inputs (stimulus) to the design and checks for correct outputs.
+## Testbench:
+- A non-synthesizable Verilog file used only for simulation.
+- It applies inputs (stimulus) to the design and checks for correct outputs.
 <img width="729" height="222" alt="image" src="https://github.com/user-attachments/assets/037ae1b5-3bdf-426b-921a-d9555564eb09" />
 
 
-# iverilog & GTKWave Flow:
-A process to check a design. First, compile the design and testbench with iverilog to create an executable. Second, run the executable to generate a .vcd waveform file. Finally, use GTKWave to view the waveforms and visually debug the design's behavior.
+## Iverilog & GTKWave Flow:
+A process to check a design. 
+- First, compile the design and testbench with iverilog to create an executable. 
+- Second, run the executable to generate a .vcd waveform file.
+- Finally, use GTKWave to view the waveforms and visually debug the design's behavior.
+- <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b5889e9-4bea-4931-878d-0892a12f4655" />
 
-# Synthesizer
-## RTL to Gates:
+
+## Synthesizer
+### RTL to Gates:
 A synthesizer is a tool that automatically converts your behavioral Verilog code (RTL) into a physical circuit blueprint.
 
-## Netlist Output:
+### Netlist Output:
 The output is called a netlist, which is a list of standard logic gates (like AND, OR, NOT) and how they are all wired together.
 
-## Yosys: 
+### Yosys: 
 In our workshop, Yosys is the open-source tool we use for this process.
+
+# 3-Video
+## 🔧 Initial Lab Setup :
+so , before starting we got some instruction to setup 
+### Step 1: Create a folder to work & clonning GitHub
+```
+midlock@midlock-LOQ-15ARP9:~$ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+Cloning into 'sky130RTLDesignAndSynthesisWorkshop'...
+remote: Enumerating objects: 417, done.
+remote: Counting objects: 100% (69/69), done.
+remote: Compressing objects: 100% (52/52), done.
+remote: Total 417 (delta 19), reused 47 (delta 12), pack-reused 348 (from 1)
+Receiving objects: 100% (417/417), 7.79 MiB | 10.44 MiB/s, done.
+Resolving deltas: 100% (242/242), done.
+midlock@midlock-LOQ-15ARP9:~$ 
+```
+### Step2 : cheching out the git 
+<img width="1413" height="483" alt="Screenshot from 2025-09-21 15-06-08" src="https://github.com/user-attachments/assets/98360c19-de36-49df-9bd7-994733754bc6" />
+
+# 4-Video 
+## Introduction iverilog gtkwave part1
+### Design File: good_mux.v
+
+```verilog
+module good_mux (input i0, input i1, input sel, output reg y);
+  always @(*)
+  begin
+    if (sel)
+      y <= i1;
+    else 
+      y <= i0;
+  end
+endmodule
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Standard Cell Library (.lib)
 ## Gate Menu: 
@@ -33,14 +127,6 @@ For each gate, the library contains important details like its size (area), how 
 
 ## Technology Mapping:
 The synthesizer uses this .lib file to choose the best gates to map your Verilog logic to, ensuring the final circuit meets all the design requirements.
-
-
-
-
-give it as github code
-
-
-Markdown
 
 # ⚙️ Verilog Simulation Flow
 
