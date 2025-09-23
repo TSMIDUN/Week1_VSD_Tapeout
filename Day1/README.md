@@ -67,117 +67,61 @@ module good_mux (input i0, input i1, input sel, output reg y);
   end
 endmodule
 ```
+<img width="782" height="572" alt="Screenshot from 2025-09-20 18-36-29" src="https://github.com/user-attachments/assets/27662471-80da-44fe-b5e7-df9f113193cf" />
+
+### Running Good Mux
+- Open Verilof files And get the good mux files
+ ```
+idlock@midlock-LOQ-15ARP9:~$ cd sky130RTLDesignAndSynthesisWorkshop/
+midlock@midlock-LOQ-15ARP9:~/sky130RTLDesignAndSynthesisWorkshop$ ls
+DC_WORKSHOP  lib  my_lib  README.md  verilog_files  yosys_run.sh
+midlock@midlock-LOQ-15ARP9:~/sky130RTLDesignAndSynthesisWorkshop$ cd verilog_files/
+midlock@midlock-LOQ-15ARP9:~/sky130RTLDesignAndSynthesisWorkshop/verilog_files$ iverilog good_mux.v tb_good_mux.v 
+midlock@midlock-LOQ-15ARP9:~/sky130RTLDesignAndSynthesisWorkshop/verilog_files$ ./a.out
+VCD info: dumpfile tb_good_mux.vcd opened for output.
+midlock@midlock-LOQ-15ARP9:~/sky130RTLDesignAndSynthesisWorkshop/verilog_files$ gtkwave tb_good_mux.vcd
+Gtk-Message: 14:43:05.389: Failed to load module "canberra-gtk-module"
+
+GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+
+[0] start time.
+[300000] end time.
+
+ ```
 
 
+<img width="1148" height="262" alt="Screenshot from 2025-09-21 15-08-38" src="https://github.com/user-attachments/assets/7edfe715-f229-4399-bad9-f453b6822111" />
+
+###  Output :
+
+<img width="999" height="633" alt="Screenshot from 2025-09-21 15-21-34" src="https://github.com/user-attachments/assets/ccefa031-185a-449b-a60e-dacbbb8cf0a6" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Standard Cell Library (.lib)
-## Gate Menu: 
-The .lib file is like a menu of all the available logic gates that the synthesizer can use.
-
-## Physical Information: 
-For each gate, the library contains important details like its size (area), how fast it is (timing), and how much power it consumes.
-
-## Technology Mapping:
-The synthesizer uses this .lib file to choose the best gates to map your Verilog logic to, ensuring the final circuit meets all the design requirements.
-
-# ⚙️ Verilog Simulation Flow
-
-This guide breaks down the standard process of simulating a Verilog design using Icarus Verilog and GTKWave, formatted for a GitHub-style document.
-
-## 📂 The Design File: `good_mux.v`
-
-This file is the **blueprint** of our hardware. It describes the actual circuit we want to build.
+# 5-Video 
+## Design File: good_mux.v
 
 ```verilog
-// This module is our circuit, a 2-to-1 Multiplexer.
-module good_mux (
-  input i0,          // First data input
-  input i1,          // Second data input
-  input sel,         // The select line to choose between i0 and i1
-  output reg y       // The output
-);
-
-  // The 'always @(*)' block is the circuit's brain.
-  // It tells the simulator to re-evaluate the output anytime an input changes.
+module good_mux (input i0, input i1, input sel, output reg y);
   always @(*)
   begin
-    // This is the core logic: if 'sel' is 1, connect 'i1' to 'y';
-    // otherwise, connect 'i0' to 'y'.
     if (sel)
       y <= i1;
     else 
       y <= i0;
   end
-
 endmodule
 ```
+## Testbench File: tb_good_mux.v
 
-
-## 🧪 The Testbench File: tb_good_mux.v
-This file is our test environment. It's not part of the final hardware; its only job is to apply inputs and check if the circuit works correctly during simulation.
-
-```Verilog
-
-// Set the time units for simulation (1ns precision).
+```verilog
 `timescale 1ns/1ps
-
 module tb_good_mux;
-
-  // These signals are controlled by our testbench.
+  // Inputs
   reg i0, i1, sel;
-  // This signal observes the output from our design.
+  // Output
   wire y;
 
-  // This is where we "plug in" our design.
-  // We're instantiating the 'good_mux' module and giving it a name 'uut' (Unit Under Test).
+  // Instantiate Unit Under Test (UUT)
   good_mux uut (
     .sel(sel),
     .i0(i0),
@@ -185,44 +129,62 @@ module tb_good_mux;
     .y(y)
   );
 
-  // The 'initial' block runs once at the beginning of the simulation.
   initial begin
-    // These commands set up the waveform viewer file.
-    $dumpfile("tb_good_mux.vcd");
-    $dumpvars(0, tb_good_mux);
-
-    // Initialize all our inputs to a known state.
+    $dumpfile("tb_good_mux.vcd");  // waveform dump file
+    $dumpvars(0, tb_good_mux);     // dump all signals
+    // Initialize Inputs
     sel = 0; i0 = 0; i1 = 0;
-
-    // This command tells the simulation to stop after 300 nanoseconds.
-    #300 $finish;
+    #300 $finish;                  // stop simulation
   end
 
-  // These 'always' blocks are our "stimulus generators."
-  // They automatically create the test signals throughout the simulation.
-  always #75 sel = ~sel; // Flip 'sel' every 75ns.
-  always #10 i0 = ~i0;   // Flip 'i0' every 10ns.
-  always #55 i1 = ~i1;   // Flip 'i1' every 55ns.
-
+  // Stimulus generators
+  always #75 sel = ~sel;
+  always #10 i0 = ~i0;
+  always #55 i1 = ~i1;
 endmodule
 ```
-▶️ Running the Simulation
-Here is the three-step process to run your simulation from the command line.
+<img width="706" height="651" alt="image" src="https://github.com/user-attachments/assets/e98e545d-a7ec-4043-8564-91f91493b077" />
 
-Shell
+# 6-Video
 
-# Step 1: Compile the Verilog files.
- This command takes your design and testbench and creates a simulation executable named 'a.out'.
-iverilog good_mux.v tb_good_mux.v
 
-# Step 2: Run the simulation executable.
-This runs the test and generates the waveform data file ('tb_good_mux.vcd').
-./a.out
 
-# Step 3: View the waveform results.
-This opens the GTKWave tool and displays the signal activity over time,
-allowing you to visually verify your circuit's behavior.
-gtkwave tb_good_mux.vcd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
