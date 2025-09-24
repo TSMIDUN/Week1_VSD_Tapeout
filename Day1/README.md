@@ -145,44 +145,63 @@ endmodule
 ```
 <img width="706" height="651" alt="image" src="https://github.com/user-attachments/assets/e98e545d-a7ec-4043-8564-91f91493b077" />
 
+
+
 # 6-Video
 ## Yosus Setup 
+
 <img width="1349" height="751" alt="image" src="https://github.com/user-attachments/assets/6256fc11-5890-4967-a23f-2fa0884bd2a6" />
+
 ## Synthesis Verify 
+
 - **Synthesizer**: A tool that converts **RTL design** into a **netlist** (collection of gates + interconnections).  
 - In this course, we use **Yosys** as the synthesizer.  
 
 <img width="1377" height="767" alt="image" src="https://github.com/user-attachments/assets/5faede16-d7b5-464f-8773-4b3404b1a49b" />
+
 <img width="1161" height="124" alt="image" src="https://github.com/user-attachments/assets/b01acc77-a721-43ca-a18f-13032a76e0cc" />
 
 # 7-Video
 
 <img width="675" height="709" alt="image" src="https://github.com/user-attachments/assets/162951e9-7fff-41ee-ac6b-456092f93850" />
 ## .LIB File 
+
 - A **.lib** (or **Liberty**) file is a text-based format that serves as a **datasheet for standard logic gates**, containing information about their area, timing, and power, which a synthesizer uses to build a circuit.
 
 
 # 8-Video 
+
 ## Slow cells 
+
 - Slower Speed: A slow cell takes a longer time for a signal to pass through it.
 - Lower Power & Area: Because they have slower switching speeds, they typically consume less power and have a smaller physical size on the chip.
+
 <img width="1033" height="769" alt="image" src="https://github.com/user-attachments/assets/437ab06d-d5f3-44cd-bdf6-5994de0f5ae5" />
 
 # 9-Video 
+
 ## Yosys Control Flow
+
 ### 1.Open Yosys 
+
 <img width="801" height="538" alt="image" src="https://github.com/user-attachments/assets/cb35eb34-97a3-42d2-ba04-58eaa7e78aad" />
+
 ### 2.Reading Library & verilog file(Good Mux)
 - This part took my time long enoughf i cant find my location because of duplicate folders then used help of ai to get my path
 - First opend the lib file where is sky.lib file is there
 - Then used pwd to get path and then got the out
+
+
   <img width="955" height="645" alt="image" src="https://github.com/user-attachments/assets/25187f7c-2c11-45fd-8592-011e780350ba" />
+
   <img width="722" height="163" alt="image" src="https://github.com/user-attachments/assets/9534f303-6dd0-4524-8b3a-573ae6c11c8c" />
 ### 3.TOP 
 -The -top flag in the Yosys synth command is used to specify the name of the top-level module of your design.
 -You use it because your Verilog project can have multiple modules, but only one of them is the main one that you want to synthesize into a complete circuit.
 
+
 <img width="1012" height="929" alt="Screenshot from 2025-09-24 09-13-37" src="https://github.com/user-attachments/assets/305ab471-edfe-4d23-b1f6-79badb00a109" />
+
 <img width="1012" height="855" alt="image" src="https://github.com/user-attachments/assets/4364b257-bf3b-4a2e-9f41-5326fb76cc39" />
 
 ### 4.Generate Netlist 
@@ -192,15 +211,20 @@ endmodule
 yosys> abc -liberty /home/midlock/vlsiflow/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
+
 <img width="1210" height="746" alt="image" src="https://github.com/user-attachments/assets/2ecebe60-55e3-4a03-b7bb-be7357484601" />ow the visual repres
+
 ### 5.Show the visual representation 
 - Shows no of inputs and outputs (in netlist generation)
 - show -> shows the visual representation
+
+
 <img width="1210" height="302" alt="image" src="https://github.com/user-attachments/assets/969a3655-150c-4e41-824b-36f82372226d" />
 
 <img width="607" height="262" alt="image" src="https://github.com/user-attachments/assets/c1b86472-131c-411d-9cb3-abcac30a11c3" />
 
 # 10-Video
+
 <img width="1004" height="572" alt="image" src="https://github.com/user-attachments/assets/a0851bb4-0b20-4b2e-85dd-673130335a79" />
 
 <img width="607" height="262" alt="Screenshot from 2025-09-24 09-22-38" src="https://github.com/user-attachments/assets/9d722cda-e6be-4757-ac19-9cce5eb305f9" />
@@ -216,6 +240,8 @@ Dumping module `\good_mux'.
 ```
 
 <img width="421" height="127" alt="image" src="https://github.com/user-attachments/assets/0ce386d7-5f40-4962-9e31-d56dc1e771ae" />
+
+
 ## Step2
 ```
 
