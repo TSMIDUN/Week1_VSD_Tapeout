@@ -201,15 +201,35 @@ yosys> abc -liberty /home/midlock/vlsiflow/sky130RTLDesignAndSynthesisWorkshop/l
 <img width="607" height="262" alt="image" src="https://github.com/user-attachments/assets/c1b86472-131c-411d-9cb3-abcac30a11c3" />
 
 # 10-Video
+<img width="1004" height="572" alt="image" src="https://github.com/user-attachments/assets/a0851bb4-0b20-4b2e-85dd-673130335a79" />
+
+<img width="607" height="262" alt="Screenshot from 2025-09-24 09-22-38" src="https://github.com/user-attachments/assets/9d722cda-e6be-4757-ac19-9cce5eb305f9" />
+
+# 11-Video 
+
+## Step1
+```
+yosys> write_verilog good_mux_netlist.v 
+
+6. Executing Verilog backend.
+Dumping module `\good_mux'.
+```
+
+<img width="421" height="127" alt="image" src="https://github.com/user-attachments/assets/0ce386d7-5f40-4962-9e31-d56dc1e771ae" />
+## Step2
+```
+
+yosys> write_verilog  -noattr good_mux_netlist.v 
+
+7. Executing Verilog backend.
+Dumping module `\good_mux'.
+
+yosys> 
+```
+we got a **simplified** netlist from this command
 
 
-
-
-
-
-
-
-
+<img width="421" height="127" alt="image" src="https://github.com/user-attachments/assets/32b851cf-9cdf-4905-8890-6668a1fb355c" />
 
 
 
