@@ -1,11 +1,4 @@
 
-```markdown
-# 📘 Gate-Level Simulation (GLS) and Synthesis Mismatches
-
-This repository demonstrates **Gate-Level Simulation (GLS)** using **Yosys** and **Icarus Verilog**, and highlights two common RTL coding pitfalls that cause **Simulation–Synthesis Mismatches**.
-
----
-
 ## 📂 Repository Structure
 
 ```
@@ -21,10 +14,6 @@ This repository demonstrates **Gate-Level Simulation (GLS)** using **Yosys** and
 └── README.md            # Documentation
 
 ````
-
-<img width="1546" height="708" alt="image" src="https://github.com/user-attachments/assets/f7ac735a-4100-4263-a8b7-df125c1452fc" />
-
-<img width="1546" height="708" alt="image" src="https://github.com/user-attachments/assets/969e53fe-0a33-4886-bca1-7ed7a3d794f7" />
 
 ---
 
@@ -147,10 +136,6 @@ end
 
 ---
 
-## 📝 Author
-
-Maintained by **[Your Name]** ✨
-Feel free to fork, raise issues, or contribute improvements.
 
 ---
 
