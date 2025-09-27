@@ -13,9 +13,11 @@
 ├── Makefile             # Optional automation for sim/synth/gls
 └── README.md            # Documentation
 
-````
+```
 
----
+<img width="1546" height="708" alt="Screenshot from 2025-09-27 22-58-21" src="https://github.com/user-attachments/assets/4d483738-ae83-46fb-b13e-a5613a3bcb8a" />
+
+<img width="1546" height="708" alt="Screenshot from 2025-09-27 22-57-53" src="https://github.com/user-attachments/assets/4dfdcd8a-1486-4d90-9b75-53409de024b6" />
 
 ## 🔄 Verification Flow: RTL → GLS
 
