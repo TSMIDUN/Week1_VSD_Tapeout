@@ -46,6 +46,7 @@ always @ (*) begin
             y = i_int[k];
     end
 end
+```
 
 Markdown
 
@@ -88,8 +89,9 @@ A `for` loop used inside an `always` block simplifies complex, repetitive logic 
 
 * **Use Case:** Writing the scalable logic for a large **Multiplexer (Mux)** or decoder.
 * **Mechanism:** The tool **unrolls** the loop during synthesis, resulting in dedicated gates for each iteration.
+```
 
-```verilog
+verilog
 // Used for scalable Mux logic
 always @ (*) begin
     for(k = 0; k < 4; k=k+1) begin
@@ -97,7 +99,8 @@ always @ (*) begin
             y = i_int[k];
     end
 end
-```
+``` 
+
 2.2. generate for Loop (Structural Replication)
 The generate for construct is used to physically replicate hardware instances (modules) across a design.
 
@@ -107,6 +110,7 @@ Mechanism: It creates separate, named instances for each iteration. Requires the
 
 Verilog
 ```
+
 genvar i;
 generate
     for (i = 1 ; i < 8; i=i+1) begin
@@ -115,6 +119,7 @@ generate
     end
 endgenerate
 ```
+
 
 ✅ Key Takeaways
 Safety First: Always use default in case statements and else in if statements in combinational logic to prevent inferred latches.
